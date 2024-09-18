@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    body {background-color: rgb(122, 163, 209);}
+    h1   {color: rgb(15, 52, 87);}
+    p    {color: rgb(255, 255, 255);}
+
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    p {
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      font-size: 25px;
+      padding: 10px 20px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    /* animated text */
+    .animate-text {
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideIn 0.4s forwards; 
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .w3-card-4 {
+      margin: 40px auto; /* Align center */
+      width: 20%; /* Width of the card */
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .w3-container p {
+      font-size: 20px;
+    }
+  </style>
+  <title>Page Title</title>
+</head>
+<body>
+
+  <h1>SELAMAT DATANG</h1>
+  <p>Yuk kenalan dengan pencet button dibawah ini</p>
+  <p id="demo"></p>
+  
+  <button type="button" onclick="toggleText()">Coba pencet disini</button>
+
+  <script>
+    let isTextVisible = false;
+    function toggleText() {
+      const demo = document.getElementById("demo");
+      demo.classList.remove("animate-text");
+
+      if (isTextVisible) {
+        demo.innerHTML = ""; 
+      } else {
+        demo.innerHTML = "Halo semuanya, saya Zharif Ra'is Aqil (202202011002). Saya berasal dari jurusan Informatika UHW Perbanas. Salam Kenal semuanya :D"; 
+        setTimeout(() => demo.classList.add("animate-text"), 10);
+      }
+      isTextVisible = !isTextVisible; 
+    }
+  </script>
+
+  <div class="w3-card-4">
+    <img src="oh no.jpeg" alt="Alps">
+    <div class="w3-container w3-center">
+      <p>ini hanya foto pemanis saja :D</p>
+    </div>
+  </div>
+
+</body>
+</html>
